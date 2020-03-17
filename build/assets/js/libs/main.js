@@ -1,0 +1,1 @@
+!function(a){a(window).on("load",function(){a.fn.toggleTargetClassActions=function(){var t=a(this).data("toggle-class-target");a('[data-element-target="'+t+'"]').toggleClass("active")},a(document).on("click","[data-toggle-class-target]",function(){a(this).toggleTargetClassActions()}),alert("test"),alert("test"),a(".pa--main-slider").slick({arrows:!1})})}(jQuery);

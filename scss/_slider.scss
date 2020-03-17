@@ -1,0 +1,250 @@
+
+
+/*------------------------------------------------------------------------------Slick */
+
+/* Slider */
+.slick-slider
+{
+    position: relative;
+
+    display: block;
+    box-sizing: border-box;
+
+    -webkit-user-select: none;
+       -moz-user-select: none;
+        -ms-user-select: none;
+            user-select: none;
+
+    -webkit-touch-callout: none;
+    -khtml-user-select: none;
+    -ms-touch-action: pan-y;
+        touch-action: pan-y;
+    -webkit-tap-highlight-color: transparent;
+}
+
+.slick-list
+{
+    position: relative;
+
+    display: block;
+    overflow: hidden;
+
+    margin: 0;
+    padding: 0;
+}
+.slick-list:focus
+{
+    outline: none;
+}
+.slick-list.dragging
+{
+    cursor: pointer;
+    cursor: hand;
+}
+
+.slick-slider .slick-track,
+.slick-slider .slick-list
+{
+    -webkit-transform: translate3d(0, 0, 0);
+       -moz-transform: translate3d(0, 0, 0);
+        -ms-transform: translate3d(0, 0, 0);
+         -o-transform: translate3d(0, 0, 0);
+            transform: translate3d(0, 0, 0);
+}
+
+.slick-track
+{
+    position: relative;
+    top: 0;
+    left: 0;
+
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+.slick-track:before,
+.slick-track:after
+{
+    display: table;
+
+    content: '';
+}
+.slick-track:after
+{
+    clear: both;
+}
+.slick-loading .slick-track
+{
+    visibility: hidden;
+}
+
+.slick-slide
+{
+    display: none;
+    float: left;
+
+    height: 100%;
+    min-height: 1px;
+}
+[dir='rtl'] .slick-slide
+{
+    float: right;
+}
+.slick-slide img
+{
+    display: block;
+}
+.slick-slide.slick-loading img
+{
+    display: none;
+}
+.slick-slide.dragging img
+{
+    pointer-events: none;
+}
+.slick-initialized .slick-slide
+{
+    display: block;
+}
+.slick-loading .slick-slide
+{
+    visibility: hidden;
+}
+.slick-vertical .slick-slide
+{
+    display: block;
+
+    height: auto;
+
+    border: 1px solid transparent;
+}
+.slick-arrow.slick-hidden {
+    display: none;
+}
+
+
+
+
+
+
+/*------------------------------------------------------------------------------Sliders */
+
+
+.pa{
+	&--main-slider{
+		img{
+			width: 100%;
+		}
+		
+		.slick-dots {
+			position: absolute;
+			margin: 0 auto;
+			display: flex;
+			width: auto;
+							
+			bottom: 50px;
+
+			left: 50%;
+			right: initial;
+			transform: translate(-50%,0);
+			
+			li{
+				display: flex;
+				width: 12px;
+				height: 12px;
+				overflow: hidden;
+				flex: 1 1 auto;
+				border-radius: 100%;
+				background: white;
+				+ li{
+					margin-left: 10px;
+					button {
+						margin-left: 10px;
+					}
+				}
+				
+				&.slick-active{
+					background: #D42C7C;
+				}
+			}
+			
+			button{
+				text-align: center;
+				border-radius: 0;
+				font-size: 0;
+				
+				text-indent: -999999999px;
+				border: none;
+				height: 100%;
+				width: 100%;
+				float: left;
+				display: block;
+				background: none;
+			}
+			
+		}
+		
+		
+		
+    }
+    
+    &--slider-modules{
+        @media (max-width: $screen-sm-min) {  
+            img{
+                width: 100%;
+            }
+            
+            .slick-dots {
+                position: absolute;
+                margin: 0 auto;
+                display: flex;
+                width: auto;			
+                bottom: -27px;
+                left: 50%;
+                right: initial;
+                transform: translate(-50%,0);
+                
+                li{
+                    display: flex;
+                    width: 12px;
+                    height: 12px;
+                    overflow: hidden;
+                    flex: 1 1 auto;
+                    border-radius: 100%;
+                    background: $color-disabled;
+                    + li{
+                        margin-left: 10px;
+                        button {
+                            margin-left: 10px;
+                        }
+                    }
+                    
+                    &.slick-active{
+                        background: #D42C7C;
+                    }
+                }
+                
+                button{
+                    text-align: center;
+                    border-radius: 0;
+                    font-size: 0;
+                    text-indent: -999999999px;
+                    border: none;
+                    height: 100%;
+                    width: 100%;
+                    float: left;
+                    display: block;
+                    background: none;
+                }
+                
+            }
+        
+        }
+		
+		
+		
+	}
+}
+
+
+

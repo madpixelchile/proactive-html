@@ -1,0 +1,170 @@
+ 
+ 
+/*------------------------------------------------------------------------------Base */
+
+ 
+html {
+  height: 100%;
+  overflow-x: hidden;
+}
+
+body {
+  text-rendering: optimizeLegibility;
+  background-color: lighten( $color-bg, 6% );
+  color: $color-base;
+  font-weight: $font-weight-normal;
+  position: relative;
+  width: 100%;
+  font-family: $font-family-base;
+  
+  @media (max-width: $screen-md-min) {
+     font-size: 14px;   
+  }
+  
+}
+
+
+/*------------------------------------------------------------------------------Healing texts */
+
+
+h1, .h1, 
+h2, .h2,
+h3, .h3,
+h4, .h4,
+h5, .h5,
+h6, .h6 {
+  line-height: 100%;
+  margin-bottom: $margen * 2;
+  font-family: $font-family-base;
+  &.thin-text{
+    font-weight: 100;
+  }
+  &.italic-text{
+    font-style: italic;
+  }
+  
+  
+}
+
+h1,
+.h1 {
+  font-size: $font-size-h1;
+	font-weight: $font-weight-light;
+  @media (max-width: $screen-md-min) {
+    font-size: 32px;
+  }
+}
+
+h2,
+.h2 {
+  font-size: $font-size-h2;
+	font-weight: $font-weight-light;
+  @media (max-width: $screen-md-min) {
+    font-size: 25px;
+  }
+}
+
+h3,
+.h3 {
+  font-size: $font-size-h3;
+  &.thin{
+    //font-weight: $font-weight-normal;
+  }
+  @media (max-width: $screen-md-min) {
+    font-size: 22px;
+  }
+}
+
+h4,
+.h4 {
+  font-size: $font-size-h4;
+  
+  @media (max-width: $screen-md-min) {
+    font-size: 20px;
+  }
+}
+
+h5,
+.h5 {
+  font-size: $font-size-h5;
+  font-weight: $font-weight-normal;
+  
+  @media only screen and (max-width: $screen-md-min) {
+    font-size: 18px; 
+  }
+}
+
+h6,
+.h6 {
+  font-size: $font-size-h6;
+  //font-weight: $font-weight-normal;
+  
+  @media only screen and (max-width: $screen-md-min) {
+    font-size: 15px;
+  }
+}
+
+
+/*------------------------------------------------------------------------------Strong */
+
+strong {
+  //font-weight: $font-weight-bold;
+}
+
+/*------------------------------------------------------------------------------Links */
+
+a {
+  color: $color-primary;
+	text-decoration: none;
+}
+
+/*------------------------------------------------------------------------------Radius */
+
+.border-radius{
+	@include border-radius(20px);
+}
+
+/*------------------------------------------------------------------------------p */
+
+p{
+	font-size: 16px;
+	line-height: 140%;
+}
+
+
+/*------------------------------------------------------------------------------img */
+
+img{
+	display: block;
+}
+
+/*------------------------------------------------------------------------------General text cont */
+
+.general-cont{
+  h1,h2,h3,h4,h5,h6, a, span{
+    margin-bottom: 20px;
+  }
+  span{
+    a{
+      margin-bottom: 0;
+    }
+  }
+  p{
+    margin-bottom: 20px;
+    a, span{
+      margin-bottom: 0;
+    }
+  }
+  ul{
+    margin-bottom: 30px;
+  }
+	
+	a{
+		&:hover, &:pressed{
+			color: $color-primary-hover;
+		}
+	}
+}
+
+
+

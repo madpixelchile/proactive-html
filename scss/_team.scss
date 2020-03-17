@@ -1,0 +1,173 @@
+
+
+/*------------------------------------------------------------------------------Team */
+
+.pa {
+
+    &--our-team {
+        padding: ($margen * 5) 0;
+        background-color: $color-bg-team;
+        overflow-x: scroll; 
+
+        &::-webkit-scrollbar {
+            display: none; 
+        }
+
+        .pa--our-team__info-box {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            width: 350px; 
+            height: 460px;
+        }
+
+        h2, p {
+            color: $color-black;
+        }
+
+        &__list {
+            display: flex;
+            flex-wrap: nowrap; 
+
+            li {
+                position: relative;
+                margin-left: $margen * 4;
+
+                a {
+                    display: block;
+                    .pa--our-team__profile {
+                        transition: all 500ms ease;
+                        opacity: 0;
+                        position: absolute;
+                        z-index: 1;
+                        top: 50%;
+                        left: 50%;
+                        transform: translate(-50%, -30%);
+                        color: $color-base;
+                        width: 160px; 
+                        padding-top: 92px; 
+                        font-size: 20px;
+                        line-height: 120%;
+                        font-weight: 300;
+                        font-weight: $font-weight-normal;
+                        text-align: center;
+                        text-shadow: 1px 1px 1px rgba(0,0,0,0.004);
+                        text-rendering: optimizeLegibility !important;
+                        -webkit-font-smoothing: antialiased !important;
+                        background: url("../img/ico-enlace.svg") 0 0 no-repeat;
+                    }
+                    p {
+                        position: absolute;
+                        z-index: 1;
+                        bottom: $margen * 4;
+                        color: $color-base;
+                        left: $margen * 4;
+                        font-size: 20px;
+                        line-height: 120%;
+                        span {
+                            display: block;
+                            font-size: 14px; 
+                        }
+                    }
+
+                    img {
+                        transition: filter 500ms ease;
+                    } 
+
+                    &:hover {
+                        .pa--our-team__profile {
+                            transform: translate(-50%, -70%);
+                            opacity: 1;
+                        }
+                        img {
+                            @media (min-width: $screen-md-min) { 
+                                -webkit-filter: blur(3px); /* Chrome, Safari, Opera */
+                                filter: blur(3px);
+                            }
+                        } 
+                    }
+                }
+            }
+        }
+
+        @media (max-width: $screen-md-min) { 
+            .pa--our-team__info-box {  
+                width: 100%;
+                height: auto;
+                margin-bottom: 30px;
+            }
+
+            &__list{
+                li {
+                    margin-left: $margen * 3;
+
+                    &:first-child {
+                        margin-left: 0;
+                    }
+
+                    a {
+                        p {
+                            left: $margen * 2;
+                            bottom: $margen * 2;
+                            font-size: 18px;
+                            span {
+                                font-size: 13px;
+                            }
+                        }
+                    }
+
+                    img {
+                        width: 25vw;
+                    }
+
+                }
+
+            }
+        }
+
+        @media (max-width: $screen-sm-min) {  
+
+            padding: ($margen * 5) 0 ($margen * 7);
+
+            &__list{
+                li {
+                    margin-left: 0;
+                    a {
+                        p {
+                            left: $margen * 2;
+                            bottom: $margen * 2;
+                            font-size: 18px;
+                            span {
+                                font-size: 13px;
+                            }
+                        }
+                    }
+
+                    img {
+                        width: 100%;
+                    }
+                }
+            }
+        }
+
+        @media (max-width: 480px) { 
+            &__list{ 
+                li {
+                    a {
+                        .pa--our-team__profile {
+                            transform: translate(-50%, -70%);
+                            opacity: 1;
+                        }
+                    }
+
+                    img {
+                        width: 100%;
+                        height: 350px;
+                        object-fit: cover;
+                        object-position: center center;
+                    }
+                }
+            }  
+        }
+    }
+}

@@ -1,0 +1,223 @@
+
+
+/*------------------------------------------------------------------------------Main color variables */
+
+	$color-base:					#FFFFFF;
+	$color-primary: 				#FB53A3;
+	$color-primary-hover:			#B23973;
+	
+	$color-secondary:				#122337;
+	$color-disabled:				#9B9B9B;
+	
+	$color-bg:						#2E3B5D;
+	$color-bg-two:					#22315B;
+	$color-bg-team:					#EEEBE7;
+	
+	$color-white:					#ffffff;
+	
+	$color-success:					#7AB546;
+	$color-error:					#FB5353;
+	 
+	
+	$color-black: 					#18191B;
+	
+	$color-submit:					#D42C7C;
+
+/*------------------------------------------------------------------------------Colors and backgrounds */
+
+
+.bg {
+	&-primary {
+		background-color: $color-primary;
+	}
+	
+}
+
+.color {
+	&-primary {
+		color: $color-primary;
+	}
+}
+
+
+
+/*------------------------------------------------------------------------------Font base */
+
+	$font-size-base: 			  16px;
+	
+	$font-family-base: 			 'Roboto';
+	
+	$font-family-light:   		 'Roboto';
+	$font-family-medium:  		 'Roboto';
+	$font-family-bold:    		 'Roboto';
+	$font-family-bold-italic:    'Roboto';
+
+
+/*------------------------------------------------------------------------------Line height base */
+
+
+	$line-height-base: 140%;
+
+/*------------------------------------------------------------------------------Font weight */
+	
+	$font-weight-light:  	100;
+	$font-weight-normal: 	300;
+	$font-weight-bold:   	600;
+	$font-weight-black:   	800;
+
+
+/*------------------------------------------------------------------------------Mixins */
+
+	@mixin border-radius($radius) {
+	  			border-radius: $radius;
+	  		 -o-border-radius: $radius;
+	  		-ms-border-radius: $radius;
+	  	   -moz-border-radius: $radius;
+	  	-webkit-border-radius: $radius;
+	}
+
+
+	@mixin box-shadow($top, $left, $blur, $color) {
+
+		-webkit-box-shadow:$top $left $blur $color;
+		-moz-box-shadow:$top $left $blur $color;
+		box-shadow:$top $left $blur $color;
+	}
+
+	@mixin opacity($opacity) {
+	  opacity: $opacity;
+	  $opacity-ie: $opacity * 100;
+	  filter: alpha(opacity=$opacity-ie); //IE8
+	}
+
+	@mixin triangle($direction, $width, $height, $color) {
+		content: '';
+		display: block;
+		width: 0;
+		height: 0;
+		@if $direction == top {
+			border-left: ($width / 2) solid transparent;
+			border-right: ($width / 2) solid transparent;
+			border-bottom: $height solid $color;
+		} @else if $direction == bottom {
+			border-left: ($width / 2) solid transparent;
+			border-right: ($width / 2) solid transparent;
+			border-top: $height solid $color;
+		} @else if $direction == left {
+			border-top: ($width / 2) solid transparent;
+			border-bottom: ($width / 2) solid transparent;
+			border-right: $height solid $color;
+		} @else if $direction == right {
+			border-top: ($width / 2) solid transparent;
+			border-bottom: ($width / 2) solid transparent;
+			border-left: $height solid $color;
+		}
+	}
+
+
+	@mixin offset-margin($margin, $value){
+		margin-#{$margin}: $value!important;
+	}
+
+	@mixin offsety-margin($margin, $value){
+		margin-#{$margin}: -$value!important;
+	}
+
+	@mixin set-bg-img($cool_url, $fallback_url) {
+		background-image: $cool_url;
+		.no-svg & {
+			background-image: $fallback_url;
+		}
+	}
+
+	@mixin linear-gradient($direction, $color-stops...) {
+		@if is-direction($direction) == false {
+			$color-stops: $direction, $color-stops;
+			$direction: 180deg;
+		}
+
+		background: nth(nth($color-stops, 1), 1);
+		background: -webkit-linear-gradient(legacy-direction($direction), $color-stops);
+		background: linear-gradient($direction, $color-stops);
+	}
+
+
+	@mixin gradient-radial($inner-color, $outer-color) {
+		background-image: -webkit-radial-gradient(circle, $inner-color, $outer-color);
+		background-image: radial-gradient(circle, $inner-color, $outer-color);
+		background-repeat: no-repeat;
+	}
+
+
+	@for $i from 1 through 12 {
+		@each $margin in top, left, bottom, right {
+
+			.offset-#{$margin}-#{$i}{
+				@include offset-margin($margin, 10px * $i)
+			}
+
+			.offsety-#{$margin}-#{$i}{
+				@include offsety-margin($margin, 10px * $i)
+			}
+
+		}
+	}
+	
+/*------------------------------------------------------------------------------Global paddings */
+
+
+	@for $i from 1 through 5 {
+	   .pad-right-#{$i*10} { padding-right: 10px * $i; }
+	}
+	@for $i from 1 through 5 {
+	   .pad-left-#{$i*10} { padding-left: 10px * $i; }
+	}
+	@for $i from 1 through 5 {
+	   .pad-top-#{$i*10} { padding-top: 10px * $i; }
+	}
+	@for $i from 1 through 5 {
+	   .pad-bottom-#{$i*10} { padding-bottom: 10px * $i; }
+	}
+	
+	
+	@for $i from 1 through 5 {
+		.right-#{$i*10} { right: 10px * $i; }
+	}
+	@for $i from 1 through 5 {
+		.left-#{$i*10} { left: 10px * $i; }
+	}
+	@for $i from 1 through 5 {
+		.top-#{$i*10} { top: 10px * $i; }
+	}
+	@for $i from 1 through 5 {
+		.bottom-#{$i*10} { bottom: 10px * $i; }
+	}
+
+
+
+/*------------------------------------------------------------------------------Font size */
+
+	$font-size-h1: 32px;
+	$font-size-h2: 24px;
+	$font-size-h3: 32px;
+	$font-size-h4: 32px;
+	$font-size-h5: 22px;
+	$font-size-h6: 20px;
+
+/*------------------------------------------------------------------------------Breakpoints */
+
+	$screen-xxs-min: 	 400px;
+	$screen-xs-min: 	 560px;
+	$screen-sm-min: 	 768px;
+	$screen-md-min: 	 992px;
+	$screen-l-min: 		1199px;
+	$screen-lg-min: 	1200px;
+	$screen-xl-min: 	1280px;
+
+/*------------------------------------------------------------------------------Margins */
+
+	$margen: 10px;
+
+
+
+

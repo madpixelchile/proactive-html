@@ -1,0 +1,270 @@
+
+
+/*------------------------------------------------------------------------------Helpers */
+
+  .ohidden{
+    overflow: hidden;
+  }
+
+  .to-right {
+    float: right;
+  }
+  .to-left {
+    float: left;
+  }
+
+  .text {
+    &-center {
+      text-align: center;
+    }
+    &-left {
+      text-align: left;
+    }
+    &-right {
+      text-align: right;
+    }
+  }
+  
+  .italic-text{
+	font-style: italic;
+  }
+  
+  .thin-text{
+	font-weight: 100;
+  }
+
+  .block {
+    display: block;
+  }
+
+  .inline {
+    display: inline-block!important;
+  }
+
+  .content-flex {
+    display: flex;
+  }
+
+  .align {
+    &-v-center {
+      align-items: center;
+    }
+    &-h-center {
+      justify-content: center;
+    }
+    &-justify {
+      justify-content: space-between;
+    }
+    &-v-middle {
+      vertical-align: middle;
+    }
+    &-center-element {
+      margin: 0 auto;
+      display: block;
+    }
+  }
+
+  .relative-element {
+    position: relative;
+  }
+
+  .elastic-img, .full {
+    width: 100%;
+  }
+  .reset-img {
+    width: auto!important;
+  }
+  
+  
+  .auto-cent{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    float: none;
+    position: relative;
+  }
+  
+  
+	.small-text{
+		font-size: 11px;
+	}
+  
+	.tiny-text{
+		font-size: 9px;
+	}
+	
+	.absolute-element{
+		position: absolute;
+	}
+	
+	.auto-cent{
+		margin-left: auto;
+		margin-right: auto;
+		float: none;
+	}
+  
+/*------------------------------------------------------------------------------Medias queries */
+
+
+.only-lg, .only-md, .only-sm, .only-xs, .only-xxs{
+	display: none;
+}
+
+
+@media only screen and (max-width: $screen-md-min) {
+	.only-md{
+        display: block;
+    }
+	.not-md{
+        display: none;
+    }
+	.md-auto-cent{
+		margin-left: auto;
+		margin-right: auto;
+		float: none;
+	}
+	.md-table-cent{
+		margin-left: auto;
+		margin-right: auto;
+		float: none;
+		display: table;
+		width: auto;
+	}
+	.md-offset-bottom-0{
+		margin-bottom: 0;
+	}
+	.md-offset-bottom-1{
+		margin-bottom: 10px;
+	}
+	.md-offset-bottom-2{
+		margin-bottom: 20px;
+	}
+	.md-offset-top-0{
+		margin-top: 0;
+	}
+	.md-offset-top-1{
+		margin-top: 10px;
+	}
+	.md-offset-top-2{
+		margin-top: 20px;
+	}
+}
+
+@media only screen and (max-width: $screen-sm-min) {
+	.only-sm{
+        display: block;
+    }
+	.not-sm{
+        display: none;
+    }
+	.sm-auto-cent{
+		margin-left: auto;
+		margin-right: auto;
+		float: none;
+	}
+	.sm-table-cent{
+		margin-left: auto;
+		margin-right: auto;
+		float: none;
+		display: table;
+		width: auto;
+	}
+	.sm-offset-bottom-0{
+		margin-bottom: 0;
+	}
+	.sm-offset-bottom-1{
+		margin-bottom: 10px;
+	}
+	.sm-offset-bottom-2{
+		margin-bottom: 20px;
+	}
+	.sm-offset-top-0{
+		margin-top: 0;
+	}
+	.sm-offset-top-1{
+		margin-top: 10px;
+	}
+	.sm-offset-top-2{
+		margin-top: 20px;
+	}
+}
+  
+  
+@media only screen and (max-width: $screen-xs-min) {
+	.only-xs{
+        display: block;
+    }
+	.not-xs{
+        display: none;
+    }
+	.xs-auto-cent{
+		margin-left: auto;
+		margin-right: auto;
+		float: none;
+	}
+	.xs-table-cent{
+		margin-left: auto;
+		margin-right: auto;
+		float: none;
+		display: table;
+		width: auto;
+	}
+	.xs-offset-bottom-0{
+		margin-bottom: 0;
+	}
+	.xs-offset-bottom-1{
+		margin-bottom: 10px;
+	}
+	.xs-offset-bottom-2{
+		margin-bottom: 20px;
+	}
+	.xs-offset-top-0{
+		margin-top: 0;
+	}
+	.xs-offset-top-1{
+		margin-top: 10px;
+	}
+	.xs-offset-top-2{
+		margin-top: 20px;
+	}
+}
+
+
+@media only screen and (max-width: $screen-xxs-min) {
+	.only-xxs{
+        display: block;
+    }
+	.not-xxs{
+        display: none;
+    }
+	.xxs-auto-cent{
+		margin-left: auto;
+		margin-right: auto;
+		float: none;
+	}
+	.xxs-table-cent{
+		margin-left: auto;
+		margin-right: auto;
+		float: none;
+		display: table;
+		width: auto;
+	}
+	.xxs-offset-bottom-0{
+		margin-bottom: 0;
+	}
+	.xxs-offset-bottom-1{
+		margin-bottom: 10px;
+	}
+	.xxs-offset-bottom-2{
+		margin-bottom: 20px;
+	}
+	.xxs-offset-top-0{
+		margin-top: 0;
+	}
+	.xxs-offset-top-1{
+		margin-top: 10px;
+	}
+	.xxs-offset-top-2{
+		margin-top: 20px;
+	}
+}
