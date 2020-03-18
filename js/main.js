@@ -130,7 +130,7 @@
                   var target = item.attr('href');
                   
                   var $target = $(target);
-                  var top = $target.offset().top - 50;
+                  var top = $(window).width() <= 992 ? $target.offset().top - 50 : $target.offset().top + 20;
                       $(scrollElement).stop().animate({
                           'scrollTop': top
                       }, $(window).width() <= 992 ? 0 : 800, 'swing');
